@@ -15,7 +15,8 @@ app.get('/',function(req,res){
 });
 
 app.post('/user',function(req,res){
-    console.log(req.body);
+    let user;
+    // console.log(req.body);
     User.create({
         name: req.body.name,
         email: req.body.email,
@@ -27,7 +28,14 @@ app.post('/user',function(req,res){
         }
 
         console.log('***',newUser);
-        return res.redirect('back');
+        if(req.xhr){
+            return res.status(200).json({
+                data: {
+                    user: newUser
+                },
+                message: "Post created!"
+            })
+        }
     });
 });
 

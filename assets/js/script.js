@@ -21,7 +21,7 @@ $('.list-item a').click(function(event){
     let targetSectionId = $(hrefId);
 
     let targetSectionpage = ((targetSectionId)[0].getBoundingClientRect());
-
+    
     let currentPos = 0;
     let targetSection = targetSectionpage;
 
@@ -94,3 +94,21 @@ function checkScroll(){
         }
     }  
 }
+
+$('#form').submit(function(event){
+    event.preventDefault();
+
+    $.ajax({
+        type: 'Post',
+        url: '/user',
+        data: $('#form').serialize(),
+        success: function(data){
+            $('#form')[0].reset();
+            console.log(data);
+        }, error: function(error) {
+            console.log(error.responseText);
+        }
+    });
+});
+
+
