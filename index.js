@@ -11,7 +11,7 @@ app.use(express.urlencoded());
 app.use(express.static('assets'));
 
 app.get('/',function(req,res){
-    res.sendFile('/New folder/Portfolio/views/home.html')
+    res.sendFile('./views/home.html')
 });
 
 app.post('/user',function(req,res){
