@@ -430,6 +430,10 @@ input:-webkit-autofill:active {
     font-size: 17px;
     cursor: pointer;
 }
+#contact-container #contact-form button:hover{
+    background-color: white;
+    color:  #403066;
+}
 ::placeholder{
     color: lightgray;  /* Chrome, Firefox, Opera, Safari 10.1+ */
     opacity: 1; /* firefox */
